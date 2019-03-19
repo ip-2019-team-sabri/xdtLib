@@ -26,6 +26,7 @@
 					<xsd:complexType>
 						<xsd:sequence>
 							<xsd:systeem name="" type=""/>
+								<!-- Add elements here -->
 							<xsd:systeem name="" type=""/>
 						</xsd:sequence>
 					</xsd:complexType>
