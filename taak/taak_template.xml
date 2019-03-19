@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<message>
+
+	<header>
+		<type>taakMessage</type>
+		<versie></versie>
+		<timestamp></timestamp>
+	</header>
+	
+	<body>
+		<taakUUID></taakUUID>
+		<naam></naam>
+		<omschrijving></omschrijving>
+		<startTijd></startTijd>
+		<eindTijd></eindTijd>
+		<aantalPersonen></aantalPersonen>
+		<isActief></isActief>
+	</body>
+	
+</message>

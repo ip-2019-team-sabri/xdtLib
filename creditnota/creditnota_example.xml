@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<message>
+	<header>
+		<type>creditnotaMessage</type>
+		<versie>1</versie>
+		<timestamp>2019-03-18T20:30:19+01:00</timestamp>
+	</header>
+	<body>
+		<creditnotaUUID>3b4a7472-241b-4b0d-884c-6fe15cff6b3a</creditnotaUUID>
+		<factuurUUID>3b4a7472-241b-4b0d-884c-6fe15cff6b3a</factuurUUID>
+		<werknemerUUID>3b4a7472-241b-4b0d-884c-6fe15cff6b3a</werknemerUUID>
+		<stortingUUID>3b4a7472-241b-4b0d-884c-6fe15cff6b3a</stortingUUID>
+		<aankoopUUID>3b4a7472-241b-4b0d-884c-6fe15cff6b3a</aankoopUUID>
+		<kaartUUID>3b4a7472-241b-4b0d-884c-6fe15cff6b3a</kaartUUID>
+		<organisatieUUID>3b4a7472-241b-4b0d-884c-6fe15cff6b3a</organisatieUUID>
+		<sessieUUID>3b4a7472-241b-4b0d-884c-6fe15cff6b3a</sessieUUID>
+		<totaalPrijs>18.56</totaalPrijs>
+		<timestamp>2019-03-18T20:30:19+01:00</timestamp>
+	</body>
+</message>

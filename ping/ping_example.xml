@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<message>
+
+	<header>
+		<type>pingMessage</type>
+		<versie>1</versie>
+		<timestamp>2019-03-18T20:30:19+01:00</timestamp>
+	</header>
+	
+	<body>
+		<pingUUID>3b4a7472-241b-4b0d-884c-6fe15cff6b3a</pingUUID>
+	</body>
+	
+</message>

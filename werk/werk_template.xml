@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<message>
+
+	<header>
+		<type>werkMessage</type>
+		<versie></versie>
+		<timestamp></timestamp>
+	</header>
+	
+	<body>
+		<werkUUID></werkUUID>
+		<taakUUID></taakUUID>
+		<werknemerUUID></werknemerUUID>
+	</body>
+	
+</message>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<message>
+
+	<header>
+		<type>keepAliveMessage</type>
+		<versie>1</versie>
+		<timestamp>2019-03-18T20:30:19+01:00</timestamp>
+	</header>
+	
+	<body>
+		<systeem>Planning</systeem>
+	</body>
+	
+</message>

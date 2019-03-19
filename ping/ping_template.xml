@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<message>
+
+	<header>
+		<type>pingMessage</type>
+		<versie></versie>
+		<timestamp></timestamp>
+	</header>
+	
+	<body>
+		<pingUUID></pingUUID>
+	</body>
+	
+</message>

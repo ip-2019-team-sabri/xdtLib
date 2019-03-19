@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<message>
+
+	<header>
+		<type>taakMessage</type>
+		<versie>1</versie>
+		<timestamp>2019-03-18T20:30:19+01:00</timestamp>
+	</header>
+	
+	<body>
+		<taakUUID>3b4a7472-241b-4b0d-884c-6fe15cff6b3a</taakUUID>
+		<naam>fuckingXSDsMakenFFS</naam>
+		<omschrijving>Fcking Apen Werk</omschrijving>
+		<startTijd>2019-03-18T19:43:00</startTijd>
+		<eindTijd>2019-03-18T00:30:00</eindTijd>
+		<aantalPersonen>1</aantalPersonen>
+		<isActief>0</isActief>
+	</body>
+	
+</message>

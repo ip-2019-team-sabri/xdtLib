@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<message>
+
+	<header>
+		<type>keepAliveMessage</type>
+		<versie></versie>
+		<timestamp></timestamp>
+	</header>
+	
+	<body>
+		<systeem></systeem>
+	</body>
+	
+</message>
