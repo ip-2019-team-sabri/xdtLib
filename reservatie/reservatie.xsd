@@ -15,23 +15,75 @@
 				<xsd:element name="header">
 					<xsd:complexType>
 						<xsd:sequence>
-							<xsd:element name="type" type="xsd:string" fixed="reservatieMessage"/>
+							<!-- Change messagetype to the appropriate type -->
+							<xsd:element name="type" type="xsd:string" fixed="messageType"/>
 							<xsd:element name="versie" type="xsd:integer"/>
 							<xsd:element name="timestamp" type="xsd:dateTime"/>
+                            <xs:element name="sender" type="xs:string" />
 						</xsd:sequence>
 					</xsd:complexType>
 				</xsd:element>
 			
 				<xsd:element name="body">
-					<xsd:complexType>
-						<xsd:sequence>
-							<xsd:element name="reservatieUUID" type="UUID"/>
-							<xsd:element name="werknemerUUID" type="UUID"/>
-							<xsd:element name="sessieUUID" type="UUID"/>
-							<xsd:element name="betaalStatus" type="xsd:boolean"/>			
-							<xsd:element name="isActief" type="xsd:boolean"/>
-						</xsd:sequence>
-					</xsd:complexType>
+
+					<xs:complexType name="user">
+                        <xsd:sequence>
+                            <xs:element name="userUUID" type="xs:string" />
+                            <xs:element name="achternaam" type="typeHoofdletter" /> <!--Eerste letter is hoofdletter-->
+                            <xs:element name="voornaam" type="typeHoofdletter" /> <!--Eerste letter is hoofdletter-->
+                            <!--<xs:element name="email" type="xs:string" />
+                            <xs:element name="telefoonnummer" type="xs:integere />-->
+                            <xs:element name="bedrijf" type="xs:string" />
+                            <xs:element name="adres" type="typeAdres"/> <!-- verwijs naar adresgroep -->
+                            <xs:element name="typeDeelnemer" type="typeDeelnemer"/> <!--Kies uit enum-->
+                            <xs:element name="betaalStatus" type="xs:string" />
+                            <xs:element name="actiefFlag" type="xs:boolean" /> <!--Ik wou in eerste instantie default="0" gebruiken, maar dat gaat niet since ik ook op event zelf kan registreren-->
+                            <xs:element name="blacklistFlag" type="xs:boolean" />
+                        </xsd:sequence>
+                    </xs:complexType>
+
+                    <!-- restricties voor eigennamen (voornaam, adres>-->
+                     <xs:simpleType name="typeHoofdletter">
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="[A-Z]\D{1,}"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+
+                    <!--restricties voor adres-->
+                    <xs:complexType name="typeAdres">
+		                <xs:group ref="groepAdres"/>
+	                </xs:complexType>
+                    <xs:simpleType name="typeHuisnummer">
+		                <xs:restriction base="xs:integer">
+			            <xs:minInclusive value="0"/>
+			            <xs:maxInclusive value="999"/>
+		                </xs:restriction>
+	                </xs:simpleType>
+                    <xs:simpleType name="typePostcode"><!--what about mensen uit bv nederland? (ik denk dan aan events in het buitenlands-->
+                        <xs:restriction base="xs:integer">
+                            <xs:pattern value="[1-9]{1}[0-9]{3}"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                    <xs:group name="groepAdres">
+                        <xs:sequence>
+                            <xs:element name="straat" type="typeHoofdletter"/>
+                            <xs:element name="huisnummer" type="typeHuisnummer"/>
+                            <xs:element name="stad" type="typeHoofdletter"/>
+                            <xs:element name="postcode" type="typePostcode"/>
+                            <xs:element name="land" type="typeHoofdletter" default="België"/>
+                        </xs:sequence>
+                    </xs:group>
+
+                    <!-- enum type deelnemer-->
+                    <xsd:simpleType name="typeDeelnemer">
+                        <xsd:restriction base="xsd:string">
+                            <xsd:enumeration value="Deelnemer"/>
+                            <xsd:enumeration value="Sponsor"/>
+                            <xsd:enumeration value="Gastspreker"/>
+                            <xsd:enumeration value="Werknemer"/>
+                            <xsd:enumeration value="Admin"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
 				</xsd:element>
 				
 			</xsd:sequence>

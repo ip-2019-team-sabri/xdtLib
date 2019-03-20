@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+	<xsd:simpleType name="UUID">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<!-- ROOT -->
+	<xsd:element name="message">
+		<xsd:complexType>
+			<xsd:sequence>
+			
+				<xsd:element name="header">
+					<xsd:complexType>
+						<xsd:sequence>
+							<!-- Change messagetype to the appropriate type -->
+							<xsd:element name="type" type="xsd:string" fixed="messageType"/>
+							<xsd:element name="versie" type="xsd:integer"/>
+							<xsd:element name="timestamp" type="xsd:dateTime"/>
+                            <xs:element name="sender" type="xs:string" />
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			
+				<xsd:element name="body">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xs:element name="sessieUUID" type="xs:string" />
+                            <xs:element name="naamSessie" type="xs:string" />
+                            <xs:element name="omschrijving" type="xs:string" />
+                            <xs:element name="organizatieUUID" type="xs:string" />
+                            <xs:element name="gast" type="xs:string" />
+                            <xs:element name="startDatumTijd" type="xs:dateTime" />
+                            <xs:element name="eindDatumTijd" type="xs:dateTime" />
+                            <xs:element name="plaats" type="xs:string" />
+                            <xs:element name="prijs" type="xs:decimal" />
+                            <xs:element name="kostPrijsSessie" type="xs:decimal" />
+                            <xs:element name="beschikbarePlaatsen" type="xs:unsignedShort" />
+                            <xs:element name="benodigdheden">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element minOccurs="0" maxOccurs="unbounded" name="benodigheid">
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                            <xs:element name="naam" type="xs:string" />
+                                            <xs:element name="kostrpijsBenodigheid" type="xs:decimal" />
+                                            <xs:element name="gebruiksitemUUID">
+                                                <xs:complexType mixed="true">
+                                                <xs:sequence>
+                                                    <xs:element name="actiefFlag" type="xs:boolean" />
+                                                </xs:sequence>
+                                                </xs:complexType>
+                                            </xs:element>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="reserverend" type="xs:boolean" />
+                            <xs:element name="actiefFlag" type="xs:boolean" />
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+				
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

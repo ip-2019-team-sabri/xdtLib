@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+	<xsd:simpleType name="UUID">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<!-- ROOT -->
+	<xsd:element name="message">
+		<xsd:complexType>
+			<xsd:sequence>
+			
+				<xsd:element name="header">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="type" type="xsd:string" fixed="reservatieMessage"/>
+							<xsd:element name="versie" type="xsd:integer"/>
+							<xsd:element name="timestamp" type="xsd:dateTime"/>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			
+				<xsd:element name="body">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="reservatieUUID" type="UUID"/>
+							<xsd:element name="userUUID" type="UUID"/>
+							<xsd:element name="sessieUUID" type="UUID"/>
+							<xsd:element name="betaalStatus" type="xsd:boolean"/>			
+							<xsd:element name="isActief" type="xsd:boolean"/>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>
