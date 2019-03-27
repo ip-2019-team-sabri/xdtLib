@@ -22,15 +22,15 @@ using System.Xml.Serialization;
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
 [System.Xml.Serialization.XmlRootAttribute(Namespace="", IsNullable=false)]
-public partial class message {
+public partial class pingMessage {
     
-    private messageHeader headerField;
+    private pingMessageHeader headerField;
     
-    private messageBody bodyField;
+    private pingMessageBody bodyField;
     
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public messageHeader header {
+    public pingMessageHeader header {
         get {
             return this.headerField;
         }
@@ -41,7 +41,7 @@ public partial class message {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public messageBody body {
+    public pingMessageBody body {
         get {
             return this.bodyField;
         }
@@ -57,7 +57,7 @@ public partial class message {
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-public partial class messageHeader {
+public partial class pingMessageHeader {
     
     private string typeField;
     
@@ -65,7 +65,7 @@ public partial class messageHeader {
     
     private System.DateTime timestampField;
     
-    public messageHeader() {
+    public pingMessageHeader() {
         this.typeField = "pingMessage";
     }
     
@@ -109,7 +109,7 @@ public partial class messageHeader {
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-public partial class messageBody {
+public partial class pingMessageBody {
     
     private string pingUUIDField;
     
