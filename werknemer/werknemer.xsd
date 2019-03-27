@@ -7,6 +7,12 @@
 		</xsd:restriction>
 	</xsd:simpleType>
 	
+	<xsd:simpleType name="email"> 
+		<xsd:restriction base="xsd:string"> 
+			<xsd:pattern value="[^@]+@[^\.]+\..+"/> 
+		</xsd:restriction> 
+	</xsd:simpleType>
+	
 	<!-- ROOT -->
 	<xsd:element name="message">
 		<xsd:complexType>
@@ -26,11 +32,22 @@
 				<xsd:element name="body">
 					<xsd:complexType>
 						<xsd:sequence>
-							<!-- Add elements here -->
+							<xsd:element name="werknemerUUID" type="xsd:string" />
+							<xsd:element name="badgeUUID" type="xsd:string" />
+							<xsd:element name="achternaam" type="xsd:string" />
+							<xsd:element name="voornaam" type="xsd:string" />
+							<xsd:element name="email" type="email" />
+							<xsd:element name="adres" type="xsd:string" />
+							<xsd:element name="btwnummer" type="xsd:string" />
+							<xsd:element name="bankrekeningnummer" type="xsd:string" />
+							<xsd:element name="typeWerknemer" type="xsd:string" />
+							<xsd:element name="betaalStatus" type="xsd:string"/>
+							<xsd:element name="isActief" type="xsd:boolean" />
+							<xsd:element name="isAanwezig" type="xsd:boolean"/>
+							<xsd:element name="isGeblokkeerd" type="xsd:boolean" />
 						</xsd:sequence>
 					</xsd:complexType>
 				</xsd:element>
-				
 			</xsd:sequence>
 		</xsd:complexType>
 	</xsd:element>
