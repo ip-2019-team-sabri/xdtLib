@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+	<xsd:simpleType name="UUID">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<!-- ROOT -->
+	<xsd:element name="message">
+		<xsd:complexType>
+			<xsd:sequence>
+			
+				<xsd:element name="header">
+					<xsd:complexType>
+						<xsd:sequence>
+							<!-- Change messagetype to the appropriate type -->
+							<xsd:element name="type" type="xsd:string" fixed="aankoopMessage"/>
+							<xsd:element name="versie" type="xsd:integer"/>
+							<xsd:element name="timestamp" type="xsd:dateTime"/>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			
+				<xsd:element name="body">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="aankoopUUID" type="UUID" />
+							<xsd:element name="badgeUUID" type="UUID" />
+							<xsd:element name="verkoopsItemUUID" type="UUID" />
+							<xsd:element name="oplaadUUID" type="UUID" />
+							<xsd:element name="hoeveelheid" type="xsd:integer" />
+							<xsd:element name="totaalprijs" type="xsd:decimal" />
+							<xsd:element name="prijsPerStuk" type="xsd:decimal" />
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

@@ -11,22 +11,22 @@
 	<xsd:element name="message">
 		<xsd:complexType>
 			<xsd:sequence>
-		
+			
 				<xsd:element name="header">
 					<xsd:complexType>
 						<xsd:sequence>
-							<xsd:element name="type" type="xsd:string" fixed="creditnotaMessage"/>
-							<xsd:element name="versie" type="xsd:decimal"/>
+							<!-- Change messagetype to the appropriate type -->
+							<xsd:element name="type" type="xsd:string" fixed="factuurMessage"/>
+							<xsd:element name="versie" type="xsd:integer"/>
 							<xsd:element name="timestamp" type="xsd:dateTime"/>
 						</xsd:sequence>
 					</xsd:complexType>
 				</xsd:element>
-
+			
 				<xsd:element name="body">
 					<xsd:complexType>
 						<xsd:sequence>
-							<xsd:element name="creditnotaUUID" type="UUID"/>
-							<xsd:element name="factuurUUID" type="UUID"/>
+							<xsd:element name="persoonUUID" type="UUID"/>
 							<xsd:element name="persoonUUID">
 								<xsd:complexType>
 									<xsd:choice>
@@ -34,18 +34,16 @@
 										<xsd:element name="bezoekerUUID" type="UUID"/>
 									</xsd:choice>
 								</xsd:complexType>
-							</xsd:element>
-							<xsd:element name="stortingUUID" type="UUID"/>
+							</xsd:element>							
+							<xsd:element name="oplaadUUID" type="UUID"/>
 							<xsd:element name="aankoopUUID" type="UUID"/>
-							<xsd:element name="kaartUUID" type="UUID"/>
+							<xsd:element name="badgeUUID" type="UUID"/>
 							<xsd:element name="organisatieUUID" type="UUID"/>
 							<xsd:element name="sessieUUID" type="UUID"/>
-							<xsd:element name="totaalPrijs" type="xsd:decimal"/>
-							<xsd:element name="timestamp" type="xsd:dateTime"/>
+							<xsd:element name="totaalprijs" type="xsd:decimal"/>
 						</xsd:sequence>
 					</xsd:complexType>
 				</xsd:element>
-				
 			</xsd:sequence>
 		</xsd:complexType>
 	</xsd:element>
