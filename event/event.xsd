@@ -19,7 +19,7 @@
 							<xsd:element name="type" type="xsd:string" fixed="eventMessage"/>
 							<xsd:element name="versie" type="xsd:integer"/>
 							<xsd:element name="timestamp" type="xsd:dateTime"/>
-                            <xs:element name="sender" type="xs:string" />
+                            <xsd:element name="sender" type="xsd:string" />
 						</xsd:sequence>
 					</xsd:complexType>
 				</xsd:element>
