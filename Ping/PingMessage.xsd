@@ -8,7 +8,7 @@
 	</xsd:simpleType>
 	
 	<!-- ROOT -->
-	<xsd:element name="pingMessage">
+	<xsd:element name="PingMessage">
 		<xsd:complexType>
 			<xsd:sequence>
 			
