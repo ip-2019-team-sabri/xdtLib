@@ -22,7 +22,7 @@ using System.Xml.Serialization;
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
 [System.Xml.Serialization.XmlRootAttribute(Namespace="", IsNullable=false)]
-public partial class pingMessage {
+public class pingMessage {
     
     private pingMessageHeader headerField;
     
@@ -57,7 +57,7 @@ public partial class pingMessage {
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-public partial class pingMessageHeader {
+public class pingMessageHeader {
     
     private string typeField;
     
@@ -109,7 +109,7 @@ public partial class pingMessageHeader {
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-public partial class pingMessageBody {
+public class pingMessageBody {
     
     private string pingUUIDField;
     
