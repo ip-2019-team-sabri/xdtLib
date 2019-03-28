@@ -28,17 +28,18 @@
 
 					<xs:complexType name="user">
                         <xsd:sequence>
-                            <xs:element name="userUUID" type="xs:string" />
-                            <xs:element name="achternaam" type="typeHoofdletter" /> <!--Eerste letter is hoofdletter-->
-                            <xs:element name="voornaam" type="typeHoofdletter" /> <!--Eerste letter is hoofdletter-->
+                            <xsd:element name="userUUID" type="xs:string" />
+                            <xsd:element name="achternaam" type="typeHoofdletter" /> <!--Eerste letter is hoofdletter-->
+                            <xsd:element name="voornaam" type="typeHoofdletter" /> <!--Eerste letter is hoofdletter-->
                             <!--<xs:element name="email" type="xs:string" />
                             <xs:element name="telefoonnummer" type="xs:integere />-->
-                            <xs:element name="bedrijf" type="xs:string" />
-                            <xs:element name="adres" type="typeAdres"/> <!-- verwijs naar adresgroep -->
-                            <xs:element name="typeDeelnemer" type="typeDeelnemer"/> <!--Kies uit enum-->
-                            <xs:element name="betaalStatus" type="xs:string" />
-                            <xs:element name="actiefFlag" type="xs:boolean" /> <!--Ik wou in eerste instantie default="0" gebruiken, maar dat gaat niet since ik ook op event zelf kan registreren-->
-                            <xs:element name="blacklistFlag" type="xs:boolean" />
+                            <xsd:element name="bedrijf" type="xs:string" />
+                            <xsd:element name="adres" type="typeAdres"/> <!-- verwijs naar adresgroep -->
+                            <xsd:element name="typeDeelnemer" type="typeDeelnemer"/> <!--Kies uit enum-->
+                            <xsd:element name="betaalStatus" type="xs:string" />
+                            <xsd:element name="actiefFlag" type="xs:boolean" /> <!--Ik wou in eerste instantie default="0" gebruiken, maar dat gaat niet since ik ook op event zelf kan registreren-->
+                            <xsd:element name="blacklistFlag" type="xs:boolean" />
+                            <xsd:element name="groepUUID" type="UUID" />
                         </xsd:sequence>
                     </xs:complexType>
 
