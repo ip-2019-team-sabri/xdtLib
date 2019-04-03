@@ -13,15 +13,23 @@
 		</xsd:restriction> 
 	</xsd:simpleType>
 	
+	<xsd:complexType name="BezoekerAdres">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="straat" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="stad" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="provincie" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="land" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="postcode" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
 	<!-- ROOT -->
-	<xsd:element name="message">
+	<xsd:element name="BezoekerMessage">
 		<xsd:complexType>
 			<xsd:sequence>
 			
 				<xsd:element name="header">
 					<xsd:complexType>
 						<xsd:sequence>
-							<!-- Change messagetype to the appropriate type -->
 							<xsd:element name="type" type="xsd:string" fixed="bezoekerMessage"/>
 							<xsd:element name="versie" type="xsd:integer"/>
 							<xsd:element name="timestamp" type="xsd:dateTime"/>
@@ -35,7 +43,7 @@
 							<xsd:element name="bezoekerUUID" type="UUID" />
 							<xsd:element name="kaartUUID" type="UUID" />
 							<xsd:element name="email" type="email" />
-							<xsd:element name="adres" type="xsd:string" />
+							<xsd:element name="adres" type="BezoekerAdres" />
 							<xsd:element name="btwnummer" type="xsd:string" />
 							<xsd:element name="bankrekeningnummer" type="xsd:string" />
 							<xsd:element name="betaalStatus" type="xsd:string"/>

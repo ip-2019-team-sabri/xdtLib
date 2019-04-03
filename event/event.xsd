@@ -7,15 +7,25 @@
 		</xsd:restriction>
 	</xsd:simpleType>
 	
+	<xsd:complexType name="EventAdres">
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="straat" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="stad" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="provincie" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="land" type="xsd:string"/>
+			<xsd:element minOccurs="0" name="postcode" type="xsd:string"/>
+	</xsd:sequence>
+	
+</xsd:complexType>
+	
 	<!-- ROOT -->
-	<xsd:element name="message">
+	<xsd:element name="EventMessage">
 		<xsd:complexType>
 			<xsd:sequence>
 			
 				<xsd:element name="header">
 					<xsd:complexType>
 						<xsd:sequence>
-							<!-- Change messagetype to the appropriate type -->
 							<xsd:element name="type" type="xsd:string" fixed="eventMessage"/>
 							<xsd:element name="versie" type="xsd:integer"/>
 							<xsd:element name="timestamp" type="xsd:dateTime"/>
@@ -33,7 +43,7 @@
                             <xsd:element name="omschrijving" type="xsd:string" />
                             <xsd:element name="startDatum" type="xsd:dateTime" />
                             <xsd:element name="eindDatum" type="xsd:dateTime" />
-                            <xsd:element name="adres" type="xsd:string" />
+                            <xsd:element name="adres" type="EventAdres" />
                             <xsd:element name="prijs" type="xsd:decimal" />
                             <xsd:element name="beschikbarePlaatsen" type="xsd:integer" />
                             <xsd:element name="isActief" type="xsd:boolean" />
