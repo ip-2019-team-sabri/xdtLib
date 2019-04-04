@@ -19,14 +19,14 @@
 	</xsd:simpleType>
 
 	<!-- ROOT -->
-	<xsd:element name="message">
+	<xsd:element name="GebruiksitemMessage">
 		<xsd:complexType>
 			<xsd:sequence>
 			
 				<xsd:element name="header">
 					<xsd:complexType>
 						<xsd:sequence>
-							<xs:element name="sender" type="systeemNaam" />
+							<xsd:element name="sender" type="systeemNaam" />
 							<xsd:element name="type" type="xsd:string" fixed="gebruiksItemMessage"/>
 							<xsd:element name="versie" type="xsd:integer"/>
 							<xsd:element name="timestamp" type="xsd:dateTime"/>

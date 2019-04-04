@@ -8,7 +8,7 @@
 	</xsd:simpleType>
 	
 	<xsd:simpleType name="severity">
-		<xsd:restriction base="xs:string">
+		<xsd:restriction base="xsd:string">
 			<xsd:enumeration value="Critical"/>
 			<xsd:enumeration value="Warning"/>
 			<xsd:enumeration value="Info"/>
@@ -27,7 +27,7 @@
 	</xsd:simpleType>
 	
 	<!-- ROOT -->
-	<xsd:element name="message">
+	<xsd:element name="ErrorMessage">
 		<xsd:complexType>
 			<xsd:sequence>
 			
@@ -35,7 +35,7 @@
 					<xsd:complexType>
 						<xsd:sequence>
 							<!-- Change messagetype to the appropriate type -->
-							<xs:element name="sender" type="systeemNaam" />
+							<xsd:element name="sender" type="systeemNaam" />
 							<xsd:element name="type" type="xsd:string" fixed="errorMessage"/>
 							<xsd:element name="versie" type="xsd:integer"/>
 							<xsd:element name="timestamp" type="xsd:dateTime"/>

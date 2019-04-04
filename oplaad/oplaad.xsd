@@ -28,7 +28,7 @@
 						<xsd:sequence>
 							<!-- Change messagetype to the appropriate type -->
 							<xsd:element name="sender" type="systeemNaam"/>
-							<xsd:element name="type" type="xsd:string" fixed="aankoopMessage"/>
+							<xsd:element name="type" type="xsd:string" fixed="oplaadMessage"/>
 							<xsd:element name="versie" type="xsd:integer"/>
 							<xsd:element name="timestamp" type="xsd:dateTime"/>
 						</xsd:sequence>
@@ -41,7 +41,7 @@
 							<xsd:element name="oplaadUUID" type="UUID" />
 							<xsd:element name="badgeUUID" type="UUID" />
 							<xsd:element name="bedrag" type="xsd:double" />
-							<xsd:element name="betaalmethode" type="string" />
+							<xsd:element name="betaalmethode" type="xsd:string" />
 						</xsd:sequence>
 					</xsd:complexType>
 				</xsd:element>

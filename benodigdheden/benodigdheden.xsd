@@ -19,7 +19,7 @@
 	</xsd:simpleType>
 
 	<!-- ROOT -->
-	<xsd:element name="message">
+	<xsd:element name="BenodigdhedenMessage">
 		<xsd:complexType>
 			<xsd:sequence>
 			
@@ -27,7 +27,7 @@
 					<xsd:complexType>
 						<xsd:sequence>
 							<!-- Change messagetype to the appropriate type -->
-							<xs:element name="sender" type="systeemNaam" />
+							<xsd:element name="sender" type="systeemNaam" />
 							<xsd:element name="type" type="xsd:string" fixed="benodigdhedenMessage"/>
 							<xsd:element name="versie" type="xsd:integer"/>
 							<xsd:element name="timestamp" type="xsd:dateTime"/>
@@ -39,11 +39,11 @@
 				<xsd:element name="body">
 					<xsd:complexType>
 						<xsd:sequence>
-							<xs:element name="benodigdhedenUUID" type="xs:string" />
-                            <xs:element name="sessieUUID" type="xs:string" />
-                            <xs:element name="gebruiksitemUUID">
-                            <xs:element name="naam" type="xs:string" />
-                            <xs:element name="kostprijsBenodigdheden" type="xs:decimal" />
+							<xsd:element name="benodigdhedenUUID" type="xsd:string" />
+                            <xsd:element name="sessieUUID" type="xsd:string" />
+                            <xsd:element name="gebruiksitemUUID"/>
+                            <xsd:element name="naam" type="xsd:string" />
+                            <xsd:element name="kostprijsBenodigdheden" type="xsd:decimal" />
                             
 						</xsd:sequence>
 					</xsd:complexType>

@@ -18,8 +18,15 @@
 		</xsd:restriction>
 	</xsd:simpleType>
 
+<xsd:complexType name="persoonType">
+		<xsd:choice>
+			<xsd:element name="werknemerUUID" type="UUID"/>
+			<xsd:element name="bezoekerUUID" type="UUID"/>
+		</xsd:choice>
+	</xsd:complexType>
+
 	<!-- ROOT -->
-	<xsd:element name="message">
+	<xsd:element name="FactuurMessage">
 		<xsd:complexType>
 			<xsd:sequence>
 			
@@ -27,7 +34,7 @@
 					<xsd:complexType>
 						<xsd:sequence>
 							<!-- Change messagetype to the appropriate type -->
-							<xs:element name="sender" type="systeemNaam" />
+							<xsd:element name="sender" type="systeemNaam" />
 							<xsd:element name="type" type="xsd:string" fixed="factuurMessage"/>
 							<xsd:element name="versie" type="xsd:integer"/>
 							<xsd:element name="timestamp" type="xsd:dateTime"/>
@@ -38,15 +45,7 @@
 				<xsd:element name="body">
 					<xsd:complexType>
 						<xsd:sequence>
-							<xsd:element name="persoonUUID" type="UUID"/>
-							<xsd:element name="persoonUUID">
-								<xsd:complexType>
-									<xsd:choice>
-										<xsd:element name="werknemerUUID" type="UUID"/>
-										<xsd:element name="bezoekerUUID" type="UUID"/>
-									</xsd:choice>
-								</xsd:complexType>
-							</xsd:element>							
+							<xsd:element name="persoonUUID" type="persoonType"/>						
 							<xsd:element name="oplaadUUID" type="UUID"/>
 							<xsd:element name="aankoopUUID" type="UUID"/>
 							<xsd:element name="badgeUUID" type="UUID"/>
