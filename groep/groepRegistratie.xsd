@@ -7,6 +7,17 @@
 		</xsd:restriction>
 	</xsd:simpleType>
 	
+	<xsd:simpleType name="systeemNaam">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="CRM"/>
+			<xsd:enumeration value="Planning"/>
+			<xsd:enumeration value="Kassa"/>
+			<xsd:enumeration value="Facturatie"/>
+			<xsd:enumeration value="Frontend"/>
+			<xsd:enumeration value="Monitor"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
 	<!-- ROOT -->
 	<xsd:element name="message">
 		<xsd:complexType>
@@ -16,6 +27,7 @@
 					<xsd:complexType>
 						<xsd:sequence>
 							<!-- Change messagetype to the appropriate type -->
+							<xs:element name="sender" type="systeemNaam" />
 							<xsd:element name="type" type="xsd:string" fixed="aankoopMessage"/>
 							<xsd:element name="versie" type="xsd:integer"/>
 							<xsd:element name="timestamp" type="xsd:dateTime"/>
